@@ -1,0 +1,25 @@
+{
+  "name": "y-state-machine",
+  "version": "0.1.0",
+  "description": "simple impletation of state machine",
+  "main": "index.js",
+  "module": "index_es.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuyuchenzh/y-state-machine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liuyuchenzh/y-state-machine.git/issues"
+  },
+  "homepage": "https://github.com/liuyuchenzh/y-state-machine#readme",
+  "devDependencies": {
+    "rollup": "^0.50.0",
+    "rollup-plugin-typescript2": "^0.7.0",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "dev": "rollup -c -w",
+    "es": "rollup -c rollup.es.config.js -w"
+  }
+}

@@ -22,6 +22,6 @@
   "scripts": {
     "dev": "rollup -c -w",
     "es": "rollup -c rollup.es.config.js -w",
-    "build": "tsc -d --declarationDir ./lib && rollup -c && rollup -c rollup.es.config.js"
+    "build": "tsc -d --outDir ./lib && rollup -c && rollup -c rollup.es.config.js"
   }
 }

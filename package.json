@@ -4,7 +4,7 @@
   "description": "simple impletation of state machine",
   "main": "index.js",
   "module": "index_es.js",
-  "types": "src/index.d.ts",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "scripts": {
     "dev": "rollup -c -w",
-    "es": "rollup -c rollup.es.config.js -w"
+    "es": "rollup -c rollup.es.config.js -w",
+    "build": "tsc -d --declarationDir ./lib && rollup -c && rollup -c rollup.es.config.js"
   }
 }

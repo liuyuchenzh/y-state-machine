@@ -4,6 +4,7 @@
   "description": "simple impletation of state machine",
   "main": "index.js",
   "module": "index_es.js",
+  "types": "src/index.ts",
   "license": "MIT",
   "repository": {
     "type": "git",

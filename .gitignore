@@ -1,5 +1,12 @@
+# basic stuff
+.DS_Store
 .idea
 .vscode
 node_modules
+
+# ignore centain cache
 *cache
-.DS_Store
+
+# ignore js and map files
+src/**/*.js
+*.map

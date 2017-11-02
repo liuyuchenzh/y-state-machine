@@ -37,14 +37,13 @@ const sm = new YourStateMachine({
 })
 
 document.addEventListener('click', function handler(e) {
-  sm.edit()
-  sm.edit()
+  sm.edit() // 'you are editing'
+  sm.edit() // nothing happens
 })
 
-// will only print 'you are editing' once
 ```
 
-In the example above, you declare a simple state machine called `YourStateMachine`。
+In the example above, you declare a simple state machine called `YourStateMachine`.
 
 It extends the base class of `StateMachine` and has two methods: `edit` and `onedit`.
 

@@ -11,8 +11,10 @@ export interface StateMachineOption {
 export declare class StateMachine implements StateMachineOption {
     name: string;
     init: string;
-    state: string;
     transitions: Transition[];
+    private $state;
+    state: string;
     constructor(option: StateMachineOption);
     register(): void;
+    onStateChange(newVal: string, oldVal: string): void;
 }

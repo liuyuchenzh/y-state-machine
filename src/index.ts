@@ -25,8 +25,21 @@ export interface StateMachineOption {
 export class StateMachine implements StateMachineOption {
   name: string
   init: string
-  state: string
   transitions: Transition[]
+
+  private $state: string
+
+  get state(): string {
+    return this.$state
+  }
+
+  set state(val: string) {
+    const oldVal: string = this.$state
+    this.$state = val
+    this.onStateChange &&
+      typeof this.onStateChange === 'function' &&
+      this.onStateChange(val, oldVal)
+  }
 
   constructor(option: StateMachineOption) {
     Object.assign(this, option)
@@ -42,7 +55,7 @@ export class StateMachine implements StateMachineOption {
       if (!(action in this)) {
         console.warn(
           `in StateMachine, forgot to declare ${action} method in ${this.name ||
-          this.constructor.name}`
+            this.constructor.name}`
         )
       }
       // no onAction
@@ -84,4 +97,6 @@ export class StateMachine implements StateMachineOption {
       }
     })
   }
+
+  onStateChange(newVal: string, oldVal: string) {}
 }

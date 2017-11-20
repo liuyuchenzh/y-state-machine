@@ -67,6 +67,28 @@ The second time you try to invoke `edit`, the state would be `editing` and won't
 
 In other words, nothing happens.
 
+## About `from` field
+
+`from` in `transitions` could be `String` or `Array<String>` or `*`.
+
+## Monitor `state`
+
+You can declare `onStateChange` method on your own class.
+
+Whenever `state` changes, `onStateChange` method will be called with two passing arguments:
+
+`newState` and `oldState`, which represent the latest `state` and the last `state` respectively.
+
+```js
+class yourClass extends StateMachine {
+  onStateChange(newState, oldState) {
+    // your own logic
+  }
+}
+
+```
+
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)

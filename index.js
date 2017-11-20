@@ -10,6 +10,20 @@ var StateMachine = (function () {
         this.state = this.init;
         this.register();
     }
+    Object.defineProperty(StateMachine.prototype, "state", {
+        get: function () {
+            return this.$state;
+        },
+        set: function (val) {
+            var oldVal = this.$state;
+            this.$state = val;
+            this.onStateChange &&
+                typeof this.onStateChange === 'function' &&
+                this.onStateChange(val, oldVal);
+        },
+        enumerable: true,
+        configurable: true
+    });
     StateMachine.prototype.register = function () {
         var _this = this;
         this.transitions.forEach(function (state) {
@@ -49,6 +63,7 @@ var StateMachine = (function () {
             };
         });
     };
+    StateMachine.prototype.onStateChange = function (newVal, oldVal) { };
     return StateMachine;
 }());
 

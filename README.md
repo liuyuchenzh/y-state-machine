@@ -1,5 +1,7 @@
 ## Intro
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/liuyuchenzh/y-state-machine.svg)](https://greenkeeper.io/)
+
 This is a simplified version of state machine in javascript.
 
 ## Installation
